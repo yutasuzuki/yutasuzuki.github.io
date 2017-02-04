@@ -1,0 +1,1 @@
+[{"id":1486225130000,"title":"sample","text":"# ES2015\n\n## ES2015(ES6)について\nESとはEcmaScriptの略です。\nES2015は次世代JavaScriptとして、2014年くらいから（もう少し前かも）持て囃されるようになりました。当時はまだES6と言われていました。\nちなみにみんなが書いているJavaScriptはES5.1と言います。\n"},{"id":1486228208000,"title":"アローファンクションについて","text":"# アローファンクションな話し\n\n## アローファンクション\n\neqeqeqeqeq\n\n```js\nconst test = () => {\n  console.log('bar')\n}\n```\n"}]
