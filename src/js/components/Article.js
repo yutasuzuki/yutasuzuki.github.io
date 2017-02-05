@@ -3,10 +3,10 @@ import React from 'react'
 const Article = ({article}) => {
   console.log('Article', article)
   return (
-    <section className={'post'}>
+    <section>
       <article className={'article'}>
         <p className={'post__title'}>{article.title}</p>
-        <div dangerouslySetInnerHTML={{ __html: article.text} } />
+        <div dangerouslySetInnerHTML={{ __html: article.text}} />
       </article>
     </section>
   )

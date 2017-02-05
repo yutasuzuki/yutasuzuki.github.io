@@ -6,7 +6,7 @@ import Article from '../containers/Article'
 const Detail = () => (
   <div>
     <Header />
-    <div className={'content'}>
+    <div>
       <div className={'container'}>
         <Article />
       </div>
