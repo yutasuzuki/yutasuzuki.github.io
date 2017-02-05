@@ -1,0 +1,38 @@
+.balloon-thumbnail {
+  position: relative;
+  width: 140px;
+  text-align: center;
+  padding: 10px 15px;
+  background: #eee;
+  border-radius: 0;
+
+  &:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 15px;
+    border-color: #eee transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    top: -15px;
+    left: 55px;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 64px;
+    left: -50px;
+    transition: ease-in-out .2s;
+
+    &--show {
+      @extend .balloon-thumbnail__wrapper;
+      opacity: 1;
+    }
+
+    &--hide {
+      @extend .balloon-thumbnail__wrapper;
+      opacity: 0;
+    }
+  }
+}

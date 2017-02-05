@@ -1,0 +1,16 @@
+.thumbnail {
+  position: relative;
+
+  &__container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}

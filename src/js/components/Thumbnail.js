@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const Thumbnail = (state) => {
-  let modalStyle = 'balloon-thumbnail-container is-hide'
+  let modalStyle = 'balloon-thumbnail__wrapper--hide'
   if (state.isShow) {
-    modalStyle = 'balloon-thumbnail-container is-show'
+    modalStyle = 'balloon-thumbnail__wrapper--show'
   }
   return (
-    <div className={'relative'}>
-      <div onClick={() => state.onClickModal()} className={'thumbnail-container'}>
-        <img className={'thumbnail'} src='/src/img/thumbnail.jpg' />
+    <div className={'thumbnail'}>
+      <div onClick={() => state.onClickModal()} className={'thumbnail__container'}>
+        <img className={'thumbnail__img'} src='/src/img/thumbnail.jpg' />
       </div>
       <div className={modalStyle}>
         <div className={'balloon-thumbnail'}>

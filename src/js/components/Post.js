@@ -5,12 +5,10 @@ const Post = (state) => {
   return (
     <section className={'post'}>
       <Link to={{ pathname: `/detail`, query: { post: state.id } }}>
-        <h1 className={'postTitle'}>{state.title}</h1>
+        <h1 className={'post__title'}>{state.title}</h1>
       </Link>
-      <p className={'postText'}>{state.text}</p>
+      <p className={'postText'}>{state.text.slice(0,20)}</p>
     </section>
-
   )
 }
-
 export default Post

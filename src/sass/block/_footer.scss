@@ -1,0 +1,18 @@
+.footer {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  background: #fdfdfd;
+  color: rgba(0, 0, 0, .44);
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  top: 0;
+
+  &__inner {
+    position: relative;
+    width: 960px;
+    height: 60px;
+    margin: 0 auto;
+  }
+}
