@@ -23,6 +23,7 @@
 - React-reduxの理解
 - markdownをどう管理するかについて
 - redux-sagaの非同期通信
+- syntax highlightでhighlight.jsを使ったが、本来通りに動かなかったので余分な処理が多かった。
 
 ### やりたかった事
 - タグ付けでのカテゴリー分け

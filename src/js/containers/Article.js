@@ -19,12 +19,10 @@ const mapStateToProps = (state) => {
     preTags.forEach((preTag) => {
       const pre = preTag.match(/<pre><code[\s\S]*?\">/i)
       const code = pre.input.replace(pre[0], '').replace(/<\/code><\/pre>/, '')
-      console.log(code)
       const tag = hljs.highlightAuto(sanitize.decode(code))
       htmlText = htmlText.replace(preTag, `${pre[0]}${tag.value}</code></pre>`)
     });
   }
-  console.log('htmlText', htmlText)
 
   const article = {
     id: post[0].id,
@@ -51,12 +49,6 @@ const convertMarkdownToHTML = (md) => {
     return converter.makeHtml(text)
   });
   return convertText.join('')
-}
-
-const convertStringToDom = (string) => {
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(string, 'text/html');
-  return doc.body.childNodes[0];
 }
 
 const sanitize = {
