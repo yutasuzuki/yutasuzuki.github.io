@@ -1,3 +1,45 @@
 .article {
-  
+  h2 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 50px 0 14px -1px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 17px;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+  }
+
+  pre {
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 0;
+    background: #aaa;
+    line-height: 1.6;
+    font-size: .9em;
+    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+
+    code {
+      display: inline-block;
+      padding: 1em 2em 1em 1em;
+      background: transparent;
+      overflow-x: auto;
+      word-wrap: normal;
+      white-space: pre;
+      -webkit-overflow-scrolling: touch;
+      color: #fff;
+    }
+  }
+
+  blockquote {
+    border-left: .3rem solid #d1d1d1;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem 1.5rem;
+  }
 }
