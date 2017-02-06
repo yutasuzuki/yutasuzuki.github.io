@@ -6,7 +6,9 @@ import PostsReducer from '../reducers/PostsReducer'
 import ModalReducer from '../reducers/ModalReducer'
 import rootSaga from '../sagas'
 
-const initialState = {}
+const initialState = {
+  scrollY: 0
+}
 
 const sagaMiddleware = createSagaMiddleware();
 

@@ -17,3 +17,10 @@ export const loadPosts = (posts) => {
     posts
   }
 }
+
+export const readScroll = (y) => {
+  return {
+    type: 'READ_SCROLL',
+    y
+  }
+}

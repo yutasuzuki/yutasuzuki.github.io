@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Article = ({article}) => {
-  console.log('Article', article)
   return (
     <section>
       <article className={'article'}>

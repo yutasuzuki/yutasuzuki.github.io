@@ -10,9 +10,9 @@ const mapDispatchToProps = (dispatch) => {
   return {}
 }
 
-const Post = connect(
+const Header = connect(
   mapStateToProps,
   mapDispatchToProps
 )(HeaderComponent)
 
-export default HeaderComponent
+export default Header
