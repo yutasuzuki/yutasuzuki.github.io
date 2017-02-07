@@ -1,6 +1,4 @@
 const ReadingScrollReducer = (state = {}, action) => {
-  console.log(state)
-  console.log(action)
   switch (action.type) {
     case 'READ_SCROLL':
       const newScrollState = {
