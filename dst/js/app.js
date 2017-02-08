@@ -62535,8 +62535,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _actions = __webpack_require__(661);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -62544,26 +62542,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// const ReadingScroller = (state) => {
-	//   let scrollTop = 0
-	//   console.log(this)
-	//   window.addEventListener('scroll', function (e) {
-	//     e.preventDefault()
-	//     scrollTop = window.pageYOffset
-	//     state.onReadingScroller(scrollTop)
-	//   })
-	//   window.addEventListener('resize', function (e) {
-	//     e.preventDefault()
-	//     console.log('resize')
-	//   })
-	//   return (
-	//     <section className={'js-target'}>
-	//       <p>ReadingScroller: {state.scrollY}</p>
-	//     </section>
-	//   )
-	// }
-	// export default ReadingScroller
 
 	var ReadingScroller = function (_Component) {
 	  _inherits(ReadingScroller, _Component);
@@ -62576,21 +62554,26 @@
 	    _this.state = {
 	      scrollY: _this.props.scrollY
 	    };
+	    _this.event = {
+	      readingScrollHandler: function readingScrollHandler() {
+	        _this.getRatioScroll();
+	      }
+	    };
 	    return _this;
 	  }
 
 	  _createClass(ReadingScroller, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      var _this2 = this;
-
-	      window.addEventListener('scroll', function () {
-	        _this2.getRatioScroll();
-	      });
-	      window.addEventListener('resize', function () {
-	        _this2.getRatioScroll();
-	      });
+	      window.addEventListener('scroll', this.event.readingScrollHandler);
+	      window.addEventListener('resize', this.event.readingScrollHandler);
 	      this.getRatioScroll();
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      window.removeEventListener('scroll', this.event.readingScrollHandler);
+	      window.removeEventListener('resize', this.event.readingScrollHandler);
 	    }
 	  }, {
 	    key: 'getRatioScroll',

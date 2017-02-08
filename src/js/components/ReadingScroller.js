@@ -1,25 +1,4 @@
 import React, { Component } from 'react'
-import { readScroll } from '../actions'
-
-// const ReadingScroller = (state) => {
-//   let scrollTop = 0
-//   console.log(this)
-//   window.addEventListener('scroll', function (e) {
-//     e.preventDefault()
-//     scrollTop = window.pageYOffset
-//     state.onReadingScroller(scrollTop)
-//   })
-//   window.addEventListener('resize', function (e) {
-//     e.preventDefault()
-//     console.log('resize')
-//   })
-//   return (
-//     <section className={'js-target'}>
-//       <p>ReadingScroller: {state.scrollY}</p>
-//     </section>
-//   )
-// }
-// export default ReadingScroller
 
 class ReadingScroller extends Component {
   constructor(props) {
@@ -27,16 +6,22 @@ class ReadingScroller extends Component {
     this.state = {
       scrollY: this.props.scrollY
     }
+    this.event = {
+      readingScrollHandler: () => {
+        this.getRatioScroll()
+      }
+    }
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      this.getRatioScroll()
-    })
-    window.addEventListener('resize', () => {
-      this.getRatioScroll()
-    })
+    window.addEventListener('scroll', this.event.readingScrollHandler)
+    window.addEventListener('resize', this.event.readingScrollHandler)
     this.getRatioScroll()
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.event.readingScrollHandler)
+    window.removeEventListener('resize', this.event.readingScrollHandler)
   }
 
   getRatioScroll() {
