@@ -7,7 +7,7 @@ const Header = () => {
     <header className={'header'}>
       <div className={'header__inner'}>
         <Link to='/'>
-          <img className={'header__logo'} src='/src/img/logo.svg' />
+          <img className={'header__logo'} src='./src/img/logo.svg' />
         </Link>
         <div className={'header__thumbnail'}>
           <Thumbnail />

@@ -9,7 +9,7 @@ const Thumbnail = (state) => {
   return (
     <div className={'thumbnail'}>
       <div onClick={() => state.onClickModal()} className={'thumbnail__container'}>
-        <img className={'thumbnail__img'} src='/src/img/thumbnail.jpg' />
+        <img className={'thumbnail__img'} src='./src/img/thumbnail.jpg' />
       </div>
       <div className={modalStyle}>
         <div className={'balloon-thumbnail'}>
