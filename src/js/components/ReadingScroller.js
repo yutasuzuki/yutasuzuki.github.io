@@ -32,7 +32,7 @@ class ReadingScroller extends Component {
     console.log(this.props)
     window.addEventListener('scroll', (e) => {
       e.preventDefault()
-      this.state.scrollY = window.pageYOffset
+      this.setState({ scrollY: window.pageYOffset});
     })
   }
   render() {
