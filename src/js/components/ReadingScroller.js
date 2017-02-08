@@ -27,16 +27,35 @@ class ReadingScroller extends Component {
     this.state = {
       scrollY: this.props.scrollY
     }
+
   }
+
   componentDidMount() {
-    console.log(this.props)
-    window.addEventListener('scroll', (e) => {
-      e.preventDefault()
-      this.setState({ scrollY: window.pageYOffset});
+    window.addEventListener('scroll', () => {
+      this.getRatioScroll()
     })
+    window.addEventListener('resize', () => {
+      this.getRatioScroll()
+    })
+    this.getRatioScroll()
   }
-  render() {
-    return <div>{this.state.scrollY}</div>;
+
+  getRatioScroll() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    this.setState({ scrollY: window.pageYOffset * ( w / h )  });
+  }
+
+  render(){
+    return (
+      <div className={'ReadingScroller'}>
+        <div className={'ReadingScroller'}>
+          <div className={'ReadingScroller'}>
+            {this.state.scrollY}
+          </div>
+        </div>
+      </div>
+    )
   }
 }
 
