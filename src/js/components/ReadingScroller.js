@@ -27,7 +27,6 @@ class ReadingScroller extends Component {
     this.state = {
       scrollY: this.props.scrollY
     }
-
   }
 
   componentDidMount() {
@@ -41,20 +40,29 @@ class ReadingScroller extends Component {
   }
 
   getRatioScroll() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    this.setState({ scrollY: window.pageYOffset * ( w / h )  });
+    const windowWidth = window.innerWidth
+    const windowHeight = window.innerHeight
+    const bodyHeight = document.body.clientHeight
+    const scrollY = window.scrollY / ( bodyHeight - windowHeight ) * 100
+    this.setState({ scrollY: scrollY })
   }
 
   render(){
+    const constainer = {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      width: `${this.state.scrollY}%`,
+      height: '2px',
+      backgroundColor: '#00a0e8',
+      WebkitTransition: '.1s ease',
+      transition: '.1s ease',
+      zIndex: 999,
+      opacity: .9,
+    }
     return (
-      <div className={'ReadingScroller'}>
-        <div className={'ReadingScroller'}>
-          <div className={'ReadingScroller'}>
-            {this.state.scrollY}
-          </div>
-        </div>
-      </div>
+      <div style={constainer}></div>
     )
   }
 }
