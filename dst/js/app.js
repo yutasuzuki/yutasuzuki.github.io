@@ -84,7 +84,7 @@
 	      _reactRouter.Route,
 	      { path: '/' },
 	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _index2.default }),
-	      _react2.default.createElement(_reactRouter.Route, { path: 'detail', component: _detail2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/React-redux-blog/detail', component: _detail2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _index2.default })
 	    )
 	  )
@@ -42622,7 +42622,7 @@
 	  value: true
 	});
 	var fetchPosts = exports.fetchPosts = function fetchPosts() {
-	  return fetch('./data/data.json').then(function (response) {
+	  return fetch('/React-redux-blog/data/data.json').then(function (response) {
 	    return response.json().then(function (json) {
 	      return json;
 	    });
@@ -42750,8 +42750,8 @@
 	      { className: 'header__inner' },
 	      _react2.default.createElement(
 	        _reactRouter.Link,
-	        { to: '/' },
-	        _react2.default.createElement('img', { className: 'header__logo', src: './src/img/logo.svg' })
+	        { to: '/React-redux-blog/' },
+	        _react2.default.createElement('img', { className: 'header__logo', src: '/React-redux-blog/src/img/logo.svg' })
 	      ),
 	      _react2.default.createElement(
 	        'div',
@@ -42877,7 +42877,7 @@
 	      { onClick: function onClick() {
 	          return state.onClickModal();
 	        }, className: 'thumbnail__container' },
-	      _react2.default.createElement('img', { className: 'thumbnail__img', src: './src/img/thumbnail.jpg' })
+	      _react2.default.createElement('img', { className: 'thumbnail__img', src: '/React-redux-blog/src/img/thumbnail.jpg' })
 	    ),
 	    _react2.default.createElement(
 	      'div',
@@ -43116,7 +43116,7 @@
 	    { className: 'post' },
 	    _react2.default.createElement(
 	      _reactRouter.Link,
-	      { to: { pathname: '/detail', query: { post: state.id } } },
+	      { to: { pathname: '/React-redux-blog/detail', query: { post: state.id } } },
 	      _react2.default.createElement(
 	        'h1',
 	        { className: 'post__title' },
