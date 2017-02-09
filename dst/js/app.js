@@ -43125,7 +43125,7 @@
 	    ),
 	    _react2.default.createElement(
 	      'p',
-	      { className: 'postText' },
+	      null,
 	      state.text.slice(0, 120)
 	    )
 	  );
