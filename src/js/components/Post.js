@@ -7,7 +7,7 @@ const Post = (state) => {
       <Link to={{ pathname: `/React-redux-blog/detail`, query: { post: state.id } }}>
         <h1 className={'post__title'}>{state.title}</h1>
       </Link>
-      <p>{state.text.slice(0,120)}</p>
+      <p>{state.text.slice(0, 120)}</p>
     </section>
   )
 }
