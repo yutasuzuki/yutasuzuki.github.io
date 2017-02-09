@@ -28,7 +28,7 @@ fs.readdir(md_dir, (err, files) =>{
   Promise.all(settings.promises).then((texts) => {
     texts.forEach((text, index) => {
       items.push({
-        id: settings.id[index],
+        id: settings.id[index] + index,
         title: settings.titles[index],
         text: text
       })
