@@ -14,7 +14,7 @@ render(
     <Router history={history}>
       <Route path='/'>
         <IndexRoute component={IndexApp}/>
-        <Route path='detail' component={DetailApp}/>
+        <Route path='/React-redux-blog/detail' component={DetailApp}/>
         <Route path="*" component={IndexApp}/>
       </Route>
     </Router>
