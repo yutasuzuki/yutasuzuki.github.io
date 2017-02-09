@@ -8,6 +8,7 @@
 - 管理画面は作りたくない
 - syntax highlightは必須
 - CSS設計でBEM
+- yarnを使いたい
 - ページをどのくらい読んでいるのかわかるようにしたい
 - github.ioで公開する
 
@@ -26,6 +27,7 @@
 - markdownをどう管理するかについて
 - redux-sagaの非同期通信
 - syntax highlight
+- windowイベントをどこで定義するか
 
 ### 今後やりたい事
 - タグ付けでのカテゴリー分け
