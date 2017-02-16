@@ -27,7 +27,8 @@ const mapStateToProps = (state) => {
   const article = {
     id: post[0].id,
     title: post[0].title,
-    text: htmlText
+    text: htmlText,
+    tags: post[0].tags,
   }
   return {
     article

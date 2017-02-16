@@ -26,11 +26,18 @@ fs.readdir(md_dir, (err, files) =>{
 
   // Markdownファイルが全て取得できたら配列に入れて、data.jsonに書き出す
   Promise.all(settings.promises).then((texts) => {
-    texts.forEach((text, index) => {
+    texts.forEach((str, index) => {
+      let text = str
+      const defaultTags = text.match(/(?!#\s)(?!##+)(#.+?\s)/g)
+      const tags = defaultTags.map((tag) => {
+        text = text.replace(tag, '')
+        return tag.replace('#', '').replace(' ','').replace(/\n/, '')
+      })
       items.push({
         id: settings.id[index] + index,
         title: settings.titles[index],
-        text: text
+        text,
+        tags
       })
     })
     fs.writeFile(`${__dirname}/data.json`, JSON.stringify(items))

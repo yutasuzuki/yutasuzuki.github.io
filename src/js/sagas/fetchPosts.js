@@ -1,5 +1,9 @@
+import constants from '../constants'
+
+console.log(constants.PATH)
+
 export const fetchPosts = () => {
-  return fetch('/React-redux-blog/data/data.json').then((response) => {
+  return fetch(`/data/data.json`).then((response) => {
     return response.json().then((json) => {
       return json
     })

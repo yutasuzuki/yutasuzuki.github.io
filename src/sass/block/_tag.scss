@@ -1,0 +1,13 @@
+.tags {
+  .tag {
+    padding: 4px 6px;
+    background-color: #f3f3f3;
+    color: #999;
+    margin: 4px;
+    transition: .1s ease;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

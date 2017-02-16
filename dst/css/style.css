@@ -652,4 +652,13 @@ textarea,
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999; }
 
+.tags .tag {
+  padding: 4px 6px;
+  background-color: #f3f3f3;
+  color: #999;
+  margin: 4px;
+  transition: .1s ease; }
+  .tags .tag:hover {
+    opacity: .8; }
+
 /*# sourceMappingURL=style.css.map */
