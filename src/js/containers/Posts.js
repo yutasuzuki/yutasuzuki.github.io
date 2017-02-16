@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
       posts = state.PostsReducer.posts.filter((post) => {
         return post.tags.includes(keyword)
       })
-    } else {
+    }
+    if (!posts.length) {
       posts = state.PostsReducer.posts
     }
   }
