@@ -4,11 +4,18 @@ import PostsComponent from '../components/Posts'
 
 const mapStateToProps = (state) => {
   let posts = []
+  const keyword = state.routing.locationBeforeTransitions.query.keyword
   if (state.PostsReducer.posts) {
-    posts = state.PostsReducer.posts
+    if (keyword) {
+      posts = state.PostsReducer.posts.filter((post) => {
+        return post.tags.includes(keyword)
+      })
+    } else {
+      posts = state.PostsReducer.posts
+    }
   }
   return {
-    posts: posts
+    posts
   }
 }
 

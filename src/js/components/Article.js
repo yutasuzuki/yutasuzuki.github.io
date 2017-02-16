@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Article = ({article}) => {
   console.log(article)
@@ -6,7 +7,11 @@ const Article = ({article}) => {
     <section>
       <article className={'article'}>
         <div className={'tags'}>
-          {article.tags.map((tag, index) => <span className={'tag'} key={index}><a>{tag}</a></span>)}
+          {article.tags.map((tag, index) => (
+            <Link to={{ pathname: `/tag`, query: { keyword: tag } }} key={index}>
+              <span className={'tag'}>{tag}</span>
+            </Link>
+          ))}
         </div>
         <p className={'post__title'}>{article.title}</p>
         <div dangerouslySetInnerHTML={{ __html: article.text}} />

@@ -16,6 +16,7 @@ render(
       <Route path='/'>
         <IndexRoute component={IndexApp}/>
         <Route path='/detail' component={DetailApp}/>
+        <Route path='/tags' component={DetailApp}/>
         <Route path='*' component={IndexApp}/>
       </Route>
     </Router>
