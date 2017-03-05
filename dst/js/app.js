@@ -87,6 +87,7 @@
 	      { path: '/' },
 	      _react2.default.createElement(_reactRouter.IndexRoute, { component: _index2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: '/detail', component: _detail2.default }),
+	      _react2.default.createElement(_reactRouter.Route, { path: '/tags', component: _detail2.default }),
 	      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _index2.default })
 	    )
 	  )
@@ -43019,8 +43020,16 @@
 
 	var mapStateToProps = function mapStateToProps(state) {
 	  var posts = [];
+	  var keyword = state.routing.locationBeforeTransitions.query.keyword;
 	  if (state.PostsReducer.posts) {
-	    posts = state.PostsReducer.posts;
+	    if (keyword) {
+	      posts = state.PostsReducer.posts.filter(function (post) {
+	        return post.tags.includes(keyword);
+	      });
+	    }
+	    if (!posts.length) {
+	      posts = state.PostsReducer.posts;
+	    }
 	  }
 	  return {
 	    posts: posts
@@ -62475,6 +62484,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(216);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Article = function Article(_ref) {
@@ -62492,11 +62503,11 @@
 	        { className: 'tags' },
 	        article.tags.map(function (tag, index) {
 	          return _react2.default.createElement(
-	            'span',
-	            { className: 'tag', key: index },
+	            _reactRouter.Link,
+	            { to: { pathname: '/tag', query: { keyword: tag } }, key: index },
 	            _react2.default.createElement(
-	              'a',
-	              null,
+	              'span',
+	              { className: 'tag' },
 	              tag
 	            )
 	          );
