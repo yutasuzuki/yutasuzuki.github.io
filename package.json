@@ -9,10 +9,11 @@
     "md": "node ./data/",
     "build": "npm run md && webpack && sass ./src/sass/style.scss:./dst/css/style.css",
     "style": "sass ./src/sass/style.scss:./dst/css/style.css",
-    "style-watch": "sass --watch ./src/sass/style.scss:./dst/css/style.css"
+    "style-watch": "node-sass --watch ./src/sass/style.scss ./dst/css/style.css"
   },
   "dependencies": {
     "highlight.js": "^9.9.0",
+    "node-sass": "^4.5.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",

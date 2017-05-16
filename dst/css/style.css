@@ -605,12 +605,14 @@ textarea,
   line-height: 48px;
   margin: 50px 0 14px -1px;
   font-weight: normal; }
+
 .article p {
   font-size: 17px;
   margin-top: 1.2em;
   margin-bottom: 1.2em;
   letter-spacing: 0.04em;
   line-height: 1.8; }
+
 .article code {
   font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
   margin-right: .1em;
@@ -619,6 +621,7 @@ textarea,
   color: #02c897;
   border-radius: 3px;
   background: #ececec; }
+
 .article pre {
   position: relative;
   margin-top: 1.5em;
@@ -637,6 +640,7 @@ textarea,
     white-space: pre;
     -webkit-overflow-scrolling: touch;
     color: #444; }
+
 .article blockquote {
   border-left: .3rem solid #d1d1d1;
   margin-left: 0;
@@ -660,5 +664,3 @@ textarea,
   transition: .1s ease; }
   .tags .tag:hover {
     opacity: .8; }
-
-/*# sourceMappingURL=style.css.map */
