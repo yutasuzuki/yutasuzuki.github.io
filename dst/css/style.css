@@ -614,13 +614,15 @@ textarea,
   line-height: 1.8; }
 
 .article code {
-  font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
   margin-right: .1em;
   margin-left: .1em;
   padding: .2em .4em;
   color: #02c897;
   border-radius: 3px;
-  background: #ececec; }
+  background: #ececec;
+  font-family: "Droid Sans Mono", "Fira Mono", monospace !important; }
+  .article code * {
+    font-family: "Droid Sans Mono", "Fira Mono", monospace !important; }
 
 .article pre {
   position: relative;
@@ -629,8 +631,7 @@ textarea,
   border-left: 2px solid #00a0e8;
   border-radius: 0;
   background: #f6f6f6;
-  line-height: 1.6;
-  font-family: Consolas,Liberation Mono,Menlo,Courier,monospace; }
+  line-height: 1.6; }
   .article pre code {
     display: inline-block;
     padding: 10px 20px 5px;
@@ -639,7 +640,10 @@ textarea,
     word-wrap: normal;
     white-space: pre;
     -webkit-overflow-scrolling: touch;
-    color: #444; }
+    color: #444;
+    font-family: "Droid Sans Mono", "Fira Mono", monospace !important; }
+    .article pre code * {
+      font-family: "Droid Sans Mono", "Fira Mono", monospace !important; }
 
 .article blockquote {
   border-left: .3rem solid #d1d1d1;

@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server",
     "md": "node ./data/",
     "build": "npm run md && webpack && sass ./src/sass/style.scss:./dst/css/style.css",
-    "style": "sass ./src/sass/style.scss:./dst/css/style.css",
+    "style": "node-sass ./src/sass/style.scss ./dst/css/style.css",
     "style-watch": "node-sass --watch ./src/sass/style.scss ./dst/css/style.css"
   },
   "dependencies": {

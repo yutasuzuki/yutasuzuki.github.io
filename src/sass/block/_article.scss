@@ -1,3 +1,5 @@
+$code-font: 'Droid Sans Mono', 'Fira Mono', monospace !important;
+
 .article {
   h2 {
     font-size: 36px;
@@ -15,13 +17,17 @@
   }
 
   code {
-    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
     margin-right: .1em;
     margin-left: .1em;
     padding: .2em .4em;
     color: #02c897;
     border-radius: 3px;
     background: #ececec;
+    font-family: $code-font;
+
+    & * {
+      font-family: $code-font;
+    }
   }
 
   pre {
@@ -32,7 +38,6 @@
     border-radius: 0;
     background: #f6f6f6;
     line-height: 1.6;
-    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
 
     code {
       display: inline-block;
@@ -43,6 +48,11 @@
       white-space: pre;
       -webkit-overflow-scrolling: touch;
       color: #444;
+      font-family: $code-font;
+
+      & * {
+        font-family: $code-font;
+      }
     }
   }
 
